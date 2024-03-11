@@ -3,7 +3,9 @@ import 'package:snapchat/core/constant_colors/color_constants.dart';
 import 'package:snapchat/view/signup_yourbirthday/signup_yourbirthday.dart';
 
 class Signupurname extends StatelessWidget {
-  const Signupurname({super.key});
+  Signupurname({super.key});
+  final TextEditingController firstname = TextEditingController();
+  final TextEditingController secondname = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +44,7 @@ class Signupurname extends StatelessWidget {
               ),
             ),
             TextFormField(
+              controller: firstname,
               decoration: InputDecoration(
                   border: UnderlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)))),
@@ -61,11 +64,19 @@ class Signupurname extends StatelessWidget {
                 ],
               ),
             ),
-            const TextField(
+            TextFormField(
+              controller: secondname,
               decoration: InputDecoration(
                   suffixIcon: Icon(Icons.visibility_off),
                   border: UnderlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)))),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return "enter the secondname";
+                } else {
+                  return null;
+                }
+              },
             ),
             const SizedBox(
               height: 20,

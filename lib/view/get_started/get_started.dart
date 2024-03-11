@@ -64,8 +64,45 @@ class Getstarted extends StatelessWidget {
                   actions: [
                     TextButton(
                         onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => Signupurname()));
+                          // Navigator.of(context).push(MaterialPageRoute(
+                          //     builder: (context) => Signupurname()));
+                          Navigator.pop(context);
+                          showDialog(
+                              context: context,
+                              builder: (context) => AlertDialog(
+                                    title: Column(
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Icon(
+                                              Icons.contacts,
+                                              color: Colors.green,
+                                            ),
+                                            Text(" Allow"),
+                                            Text(" Snapchat"),
+                                            Text(" to")
+                                          ],
+                                        ),
+                                        Text("make and manage phone calls?")
+                                      ],
+                                    ),
+                                    actions: [
+                                      TextButton(
+                                          onPressed: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      Signupurname(),
+                                                ));
+                                          },
+                                          child: Text("Allow",
+                                              style: TextStyle(
+                                                  color: const Color.fromARGB(
+                                                      255, 23, 126, 27),
+                                                  fontWeight: FontWeight.w500)))
+                                    ],
+                                  ));
                         },
                         child: Text(
                           "ALLOW",

@@ -1,28 +1,74 @@
 import 'package:flutter/material.dart';
+import 'package:snapchat/view/chat_screen/chat_screen.dart';
 import 'package:snapchat/view/snap_chatlogin/snap_chatlogin.dart';
 
-class MyWidget extends StatelessWidget {
-  const MyWidget.Bottomnavbarscreen({super.key});
+class BottomNavBarScreen extends StatefulWidget {
+  const BottomNavBarScreen({super.key});
 
+  @override
+  State<BottomNavBarScreen> createState() => _BottomNavBarScreenState();
+}
+
+class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
+  List<Widget> screesList = [
+    Container(
+      color: Colors.yellow,
+    ),
+    Chatscreen(),
+    Container(
+      color: Colors.blue,
+    ),
+    Container(
+      color: Colors.green,
+    ),
+    Container(
+      color: Colors.red,
+    ),
+  ];
+
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(items: [
-        BottomNavigationBarItem(icon: Icon(Icons.location_on), label: ""),
-        BottomNavigationBarItem(icon: Icon(Icons.mode_comment), label: ""),
-        BottomNavigationBarItem(
-            icon: IconButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Snapchatlogin(),
-                      ));
-                },
-                icon: Icon(Icons.photo_camera)),
-            label: ""),
-        // BottomNavigationBarItem(icon: Icon(Icons.group), label: "")
-      ]),
+      body: screesList[selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: (value) {
+          if (value != 2) {
+            selectedIndex = value;
+            setState(() {});
+          } else {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Snapchatlogin(),
+                ));
+          }
+        },
+        type: BottomNavigationBarType.fixed,
+        currentIndex: selectedIndex,
+        items: [
+          const BottomNavigationBarItem(
+              icon: Icon(Icons.location_on), label: ""),
+          const BottomNavigationBarItem(
+              icon: Icon(Icons.mode_comment), label: ""),
+
+          // center bottm nav  button
+          BottomNavigationBarItem(
+              icon: IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Snapchatlogin(),
+                        ));
+                  },
+                  icon: Icon(Icons.photo_camera)),
+              label: ""),
+          const BottomNavigationBarItem(icon: Icon(Icons.group), label: ""),
+          const BottomNavigationBarItem(
+              icon: Icon(Icons.change_history), label: ""),
+        ],
+      ),
     );
   }
 }

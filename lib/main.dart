@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:snapchat/view/bottom_navigation_bar/bottom_navigation.dart';
+
+import 'package:snapchat/view/snap_chatlogin/snap_chatlogin.dart';
 
 void main() {
   runApp(Myapp());
@@ -10,6 +11,9 @@ class Myapp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: MyWidget.Bottomnavbarscreen());
+    return const MaterialApp(
+      home: Snapchatlogin(),
+      debugShowCheckedModeBanner: false,
+    );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:snapchat/core/constant_colors/color_constants.dart';
+import 'package:snapchat/view/bottom_navigation_bar/bottom_navigation.dart';
 import 'package:snapchat/view/mobile_no/mobile_no.dart';
 
 class Email extends StatelessWidget {
@@ -68,7 +69,13 @@ class Email extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(30.0),
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => BottomNavBarScreen(),
+                    ));
+              },
               child: Container(
                 height: 50,
                 width: 210,
