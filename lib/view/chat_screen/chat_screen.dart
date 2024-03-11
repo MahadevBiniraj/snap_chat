@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:snapchat/core/constant_colors/color_constants.dart';
+import 'package:snapchat/view/chat_screen/widgets/accounts.dart';
 
 void main() {
   runApp(Chatscreen());
@@ -36,6 +37,7 @@ class Chatscreen extends StatelessWidget {
           Icon(Icons.more_horiz)
         ],
       ),
+      body: Accounts(),
     );
   }
 }
