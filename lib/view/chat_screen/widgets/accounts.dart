@@ -20,7 +20,10 @@ class Accounts extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Row(
             children: [
-              CircleAvatar(),
+              CircleAvatar(
+                backgroundImage:
+                    NetworkImage(Homechat.chatModels[index].propic),
+              ),
               SizedBox(
                 width: 10,
               ),
@@ -30,18 +33,23 @@ class Accounts extends StatelessWidget {
                   children: [
                     Text(
                       Homechat.chatModels[index].name,
+                      style:
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
                     ),
                     Row(
                       children: [
                         Container(
                           height: 15,
                           width: 15,
-                          color: Colors.black,
+                          color: Colorconstants.textred,
                         ),
                         SizedBox(
                           width: 5,
                         ),
-                        Text(Homechat.chatModels[index].newsnap)
+                        Text(
+                          Homechat.chatModels[index].newsnap,
+                          style: TextStyle(),
+                        )
                       ],
                     )
                   ],

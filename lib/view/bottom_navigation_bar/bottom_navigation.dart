@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:snapchat/view/camera/camera.dart';
 import 'package:snapchat/view/chat_screen/chat_screen.dart';
-import 'package:snapchat/view/snap_chatlogin/snap_chatlogin.dart';
 
 class BottomNavBarScreen extends StatefulWidget {
   const BottomNavBarScreen({super.key});
@@ -16,7 +16,7 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
     ),
     Chatscreen(),
     Container(
-      color: Colors.blue,
+      color: Colors.green,
     ),
     Container(
       color: Colors.green,
@@ -40,7 +40,7 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => Snapchatlogin(),
+                  builder: (context) => Camera(),
                 ));
           }
         },
