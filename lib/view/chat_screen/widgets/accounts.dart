@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:snapchat/controller/chat_screencontroller.dart';
+import 'package:snapchat/core/constant_colors/color_constants.dart';
 
 class Accounts extends StatelessWidget {
   const Accounts({super.key});
@@ -9,8 +11,11 @@ class Accounts extends StatelessWidget {
     return ListView.builder(
       itemCount: 15,
       itemBuilder: (context, index) => Container(
-        height: 80,
+        padding: EdgeInsets.symmetric(vertical: 2),
         width: double.infinity,
+        decoration: BoxDecoration(
+          border: Border.all(color: Colorconstants.textgrey.withOpacity(0.3)),
+        ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
@@ -23,7 +28,9 @@ class Accounts extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Mahadev B"),
+                    Text(
+                      Homechat.chatModels[index].name,
+                    ),
                     Row(
                       children: [
                         Container(
@@ -34,7 +41,7 @@ class Accounts extends StatelessWidget {
                         SizedBox(
                           width: 5,
                         ),
-                        Text("received")
+                        Text(Homechat.chatModels[index].newsnap)
                       ],
                     )
                   ],

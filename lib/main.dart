@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:snapchat/view/snap_chatlogin/snap_chatlogin.dart';
 
 void main() {
-  runApp(Myapp());
+  runApp(const Myapp());
 }
 
 class Myapp extends StatelessWidget {
