@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:snapchat/core/constant_colors/color_constants.dart';
 import 'package:snapchat/view/chat_screen/widgets/accounts.dart';
+import 'package:snapchat/view/chat_screen/widgets/addbottomsheet.dart';
 import 'package:snapchat/view/chat_screen/widgets/bottom_sheet_container.dart';
 
 class Chatscreen extends StatelessWidget {
@@ -28,7 +29,16 @@ class Chatscreen extends StatelessWidget {
           ),
         ),
         actions: [
-          Icon(Icons.person_add),
+          IconButton(
+              onPressed: () {
+                showBottomSheet(
+                  context: context,
+                  builder: (context) {
+                    return Addbottomsheet();
+                  },
+                );
+              },
+              icon: Icon(Icons.person_add)),
           SizedBox(
             width: 15,
           ),
