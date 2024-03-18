@@ -56,11 +56,8 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
           BottomNavigationBarItem(
               icon: IconButton(
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Snapchatlogin(),
-                        ));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Camera()));
                   },
                   icon: Icon(Icons.photo_camera)),
               label: ""),

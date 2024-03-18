@@ -6,4 +6,5 @@ class Colorconstants {
   static const Color bgwhite = Color(0xffFFFFFF);
   static const Color textgrey = Color.fromARGB(255, 130, 129, 129);
   static const Color textred = Colors.red;
+  static const Color normalblack = Colors.black;
 }

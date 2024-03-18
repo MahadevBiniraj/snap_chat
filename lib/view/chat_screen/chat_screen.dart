@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:snapchat/core/constant_colors/color_constants.dart';
 import 'package:snapchat/view/chat_screen/widgets/accounts.dart';
-
-void main() {
-  runApp(Chatscreen());
-}
+import 'package:snapchat/view/chat_screen/widgets/bottom_sheet_container.dart';
 
 class Chatscreen extends StatelessWidget {
   const Chatscreen({super.key});
@@ -12,6 +9,7 @@ class Chatscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colorconstants.bgwhite,
       appBar: AppBar(
         title: Text("Chat"),
@@ -34,7 +32,16 @@ class Chatscreen extends StatelessWidget {
           SizedBox(
             width: 15,
           ),
-          Icon(Icons.more_horiz)
+          IconButton(
+              onPressed: () {
+                showModalBottomSheet(
+                  context: context,
+                  builder: (context) {
+                    return Bottomsheetcontainer();
+                  },
+                );
+              },
+              icon: Icon(Icons.more_horiz))
         ],
       ),
       body: Accounts(),
