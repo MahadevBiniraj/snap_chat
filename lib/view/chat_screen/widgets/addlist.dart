@@ -9,6 +9,7 @@ class Addlist extends StatelessWidget {
     return ListView.builder(
       itemCount: 3,
       shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
       itemBuilder: (context, index) {
         return Container(
           // height: 70,

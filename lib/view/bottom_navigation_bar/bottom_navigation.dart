@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:snapchat/view/camera/camera.dart';
 import 'package:snapchat/view/chat_screen/chat_screen.dart';
 import 'package:snapchat/view/circle_grid_screen/circle_grid_screen.dart';
+import 'package:snapchat/view/reel_section/reel.dart';
 
 class BottomNavBarScreen extends StatefulWidget {
   const BottomNavBarScreen({super.key});
@@ -20,9 +21,7 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
       color: Colors.red,
     ),
     Circlegrid(),
-    Container(
-      color: Colors.red,
-    ),
+    Reel()
   ];
 
   int selectedIndex = 0;

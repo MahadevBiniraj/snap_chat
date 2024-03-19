@@ -7,7 +7,8 @@ class Add2list extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 4,
+      physics: NeverScrollableScrollPhysics(),
+      itemCount: 10,
       shrinkWrap: true,
       itemBuilder: (context, index) {
         return Container(

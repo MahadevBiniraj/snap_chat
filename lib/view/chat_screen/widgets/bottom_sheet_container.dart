@@ -38,18 +38,21 @@ class Bottomsheetcontainer extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Container(
-              padding: EdgeInsets.symmetric(vertical: 15),
-              width: double.infinity,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(
-                      color: Colorconstants.textgrey.withOpacity(0.7)),
-                  color: Colorconstants.bgwhite.withOpacity(0.2)),
-              child: Center(
-                child: Text(
-                  "Done",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+            child: InkWell(
+              onTap: () {},
+              child: Container(
+                padding: EdgeInsets.symmetric(vertical: 15),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(
+                        color: Colorconstants.textgrey.withOpacity(0.7)),
+                    color: Colorconstants.bgwhite.withOpacity(0.2)),
+                child: Center(
+                  child: Text(
+                    "Done",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  ),
                 ),
               ),
             ),
