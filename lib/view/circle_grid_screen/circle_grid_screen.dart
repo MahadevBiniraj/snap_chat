@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:snapchat/controller/gridpic_controller/gridpic_controller.dart';
 import 'package:snapchat/core/constant_colors/color_constants.dart';
+import 'package:snapchat/model/gridpic_model/gridpic.dart';
 import 'package:snapchat/view/circle_grid_screen/widgets/story_avatar.dart';
 
 class Circlegrid extends StatelessWidget {
@@ -60,8 +62,8 @@ class Circlegrid extends StatelessWidget {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             image: DecorationImage(
-                                image: NetworkImage(
-                                    "https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"),
+                                image: NetworkImage(gridpiccontroller
+                                    .gridList[index].gridpropic),
                                 fit: BoxFit.cover)),
                       ),
                       Positioned(
@@ -79,16 +81,16 @@ class Circlegrid extends StatelessWidget {
                               height: 20,
                             ),
                             Text(
-                              "Mahadev",
+                              gridpiccontroller.gridList[index].gridname,
                               style: TextStyle(
-                                  fontSize: 17,
+                                  fontSize: 18,
                                   fontWeight: FontWeight.w700,
                                   color: Colorconstants.bgwhite),
                             ),
                             Text(
-                              "yesterday",
+                              gridpiccontroller.gridList[index].subname,
                               style: TextStyle(
-                                  fontSize: 10,
+                                  fontSize: 15,
                                   fontWeight: FontWeight.w400,
                                   color: Colorconstants.textgrey),
                             )

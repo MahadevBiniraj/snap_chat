@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:snapchat/view/camera/camera.dart';
 import 'package:snapchat/view/chat_screen/chat_screen.dart';
 import 'package:snapchat/view/circle_grid_screen/circle_grid_screen.dart';
+import 'package:snapchat/view/map/map.dart';
 import 'package:snapchat/view/reel_section/reel.dart';
 
 class BottomNavBarScreen extends StatefulWidget {
@@ -13,9 +14,7 @@ class BottomNavBarScreen extends StatefulWidget {
 
 class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
   List<Widget> screesList = [
-    Container(
-      color: Colors.yellow,
-    ),
+    map(),
     Chatscreen(),
     Container(
       color: Colors.red,

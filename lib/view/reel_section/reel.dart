@@ -26,7 +26,10 @@ class Reel extends StatelessWidget {
                   alignment: Alignment.bottomCenter,
                   child: Row(
                     children: [
-                      CircleAvatar(),
+                      CircleAvatar(
+                        backgroundImage: NetworkImage(
+                            "https://cdn.britannica.com/81/198481-050-10CED2D9/Gilberto-Godoy-Filho-ball-Brazil-Argentina-volleyball-2007.jpg"),
+                      ),
                       Text(
                         "Cstorm Vollleyball",
                         style: TextStyle(
@@ -38,19 +41,35 @@ class Reel extends StatelessWidget {
                       Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Icon(Icons.favorite),
+                          Icon(
+                            Icons.favorite,
+                            color: Colorconstants.bgwhite,
+                            size: 40,
+                          ),
                           SizedBox(
                             height: 20,
                           ),
-                          Icon(Icons.mark_chat_unread),
+                          Icon(
+                            Icons.mark_chat_unread,
+                            color: Colorconstants.bgwhite,
+                            size: 40,
+                          ),
                           SizedBox(
                             height: 20,
                           ),
-                          Icon(Icons.share),
+                          Icon(
+                            Icons.share,
+                            color: Colorconstants.bgwhite,
+                            size: 40,
+                          ),
                           SizedBox(
                             height: 20,
                           ),
-                          Icon(Icons.more_horiz),
+                          Icon(
+                            Icons.more_horiz,
+                            color: Colorconstants.bgwhite,
+                            size: 40,
+                          ),
                           SizedBox(
                             height: 20,
                           ),
@@ -73,7 +92,13 @@ class Reel extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    CircleAvatar(),
+                    CircleAvatar(
+                      backgroundImage: NetworkImage(
+                          "https://tinyjpg.com/images/social/website.jpg"),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
                     Icon(Icons.search),
                   ],
                 ),
@@ -81,7 +106,13 @@ class Reel extends StatelessWidget {
               Expanded(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [Text("Spotlight")],
+                  children: [
+                    Text(
+                      "Spotlight",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                    )
+                  ],
                 ),
               ),
               Expanded(

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:snapchat/controller/Story_avatar_controller/Storyavatarcontroller.dart';
 
 class Storyavatar extends StatelessWidget {
-  const Storyavatar({super.key});
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -21,12 +20,12 @@ class Storyavatar extends StatelessWidget {
                           padding: const EdgeInsets.all(4.0),
                           child: CircleAvatar(
                             backgroundImage: NetworkImage(
-                                "https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-james-wheeler-414612.jpg&fm=jpg"),
+                                Storycontroller.storyAvatarList[index].propic),
                           ),
                         ),
                       ),
                       Text(
-                        "Mahadev",
+                        Storycontroller.storyAvatarList[index].cname,
                         style: TextStyle(
                             fontSize: 13, fontWeight: FontWeight.w600),
                       ),
